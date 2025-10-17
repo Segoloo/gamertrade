@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GamerTrade - Tienda de Videojuegos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/706/706164.png">
+</head>
+<body class="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen font-sans">
+
+  <!-- NAVBAR -->
+  <header class="flex justify-between items-center p-6 bg-gray-800 shadow-lg fixed w-full top-0 z-50">
+    <h1 class="text-3xl font-extrabold text-blue-400 tracking-wide">🎮 GamerTrade</h1>
+    <nav class="space-x-6 hidden md:block">
+      <a href="#" class="hover:text-blue-400">Inicio</a>
+      <a href="#catalogo" class="hover:text-blue-400">Catálogo</a>
+      <a href="#" class="hover:text-blue-400">Ofertas</a>
+      <a href="#" class="hover:text-blue-400">Contacto</a>
+    </nav>
+    <button id="verCarrito" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg font-semibold">
+      🛒 Carrito <span id="contadorCarrito" class="text-yellow-300">(0)</span>
+    </button>
+  </header>
+
+  <main class="pt-24">
+    <!-- HERO -->
+    <section class="text-center py-16 px-6">
+      <h2 class="text-5xl font-bold mb-4 text-blue-400">Compra tus juegos favoritos al mejor precio</h2>
+      <p class="text-gray-300 mb-8">Explora, elige y vive la experiencia Gamer como nunca antes.</p>
+      <a href="#catalogo" class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold transition-all duration-200">Ver catálogo</a>
+    </section>
+
+    <!-- PRODUCTO DESTACADO -->
+    <section class="max-w-5xl mx-auto bg-gray-800 rounded-2xl shadow-2xl p-8 mt-10 flex flex-col md:flex-row items-center">
+      <img src="https://i.blogs.es/1ca280/trailer-1-illustration-16x9-/450_1000.jpg" alt="GTA 6" class="rounded-2xl w-full md:w-1/2 shadow-lg mb-6 md:mb-0">
+      <div class="md:ml-8 text-center md:text-left">
+        <h3 class="text-3xl font-bold text-blue-400 mb-2">Grand Theft Auto VI</h3>
+        <p class="text-gray-300 mb-4">Explora Vice City como nunca antes en la nueva entrega de Rockstar Games.</p>
+        <p class="text-2xl font-semibold text-green-400 mb-4">$299.000 COP</p>
+        <button onclick="agregarAlCarrito('Grand Theft Auto VI', 299000)" class="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-xl font-semibold transition-all duration-200">🛒 Agregar al carrito</button>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section id="catalogo" class="max-w-6xl mx-auto py-16 px-6">
+      <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Catálogo Popular</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- CARD -->
+        <div class="bg-gray-800 rounded-2xl p-4 hover:scale-105 transition-transform duration-200 shadow-lg">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202405/2921/4b45cf4b319a65e05f6e4f87a22c7b91d2e7e8aeb247b61f.png" alt="Call of Duty" class="rounded-xl mb-4">
+          <h4 class="text-xl font-bold text-blue-300">Call of Duty: Black Ops 6</h4>
+          <p class="text-gray-400 mb-2">Acción y estrategia con gráficos de última generación.</p>
+          <span class="text-green-400 font-semibold block mb-3">$249.000</span>
+          <button onclick="agregarAlCarrito('Call of Duty: Black Ops 6', 249000)" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-semibold">🛒 Agregar</button>
+        </div>
+
+        <div class="bg-gray-800 rounded-2xl p-4 hover:scale-105 transition-transform duration-200 shadow-lg">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCikZGI-UtBNrJY-wK1DVxbLyhCEvxRm4Fig&s" alt="Elden Ring" class="rounded-xl mb-4">
+          <h4 class="text-xl font-bold text-blue-300">Elden Ring: Shadow of the Erdtree</h4>
+          <p class="text-gray-400 mb-2">Explora un mundo lleno de misterios y enemigos desafiantes.</p>
+          <span class="text-green-400 font-semibold block mb-3">$199.000</span>
+          <button onclick="agregarAlCarrito('Elden Ring: Shadow of the Erdtree', 199000)" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-semibold">🛒 Agregar</button>
+        </div>
+
+        <div class="bg-gray-800 rounded-2xl p-4 hover:scale-105 transition-transform duration-200 shadow-lg">
+          <img src="https://juegosdigitalescolombia.com/files/images/productos/1697557642-marvels-spider-man-2-ps5-pre-orden-0.jpg" alt="Spider-Man 2" class="rounded-xl mb-4">
+          <h4 class="text-xl font-bold text-blue-300">Spider-Man 2</h4>
+          <p class="text-gray-400 mb-2">Balanceate por Nueva York con Peter Parker y Miles Morales.</p>
+          <span class="text-green-400 font-semibold block mb-3">$269.000</span>
+          <button onclick="agregarAlCarrito('Spider-Man 2', 269000)" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-semibold">🛒 Agregar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARRITO (MODAL) -->
+    <div id="modalCarrito" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+      <div class="bg-gray-900 p-8 rounded-2xl w-11/12 md:w-2/3 lg:w-1/2 shadow-2xl relative">
+        <button id="cerrarCarrito" class="absolute top-4 right-4 text-red-400 text-2xl font-bold hover:text-red-500">✖</button>
+        <h3 class="text-3xl font-bold text-blue-400 mb-6">🛒 Tu carrito</h3>
+        <div id="listaCarrito" class="space-y-4"></div>
+        <div class="mt-6 text-right">
+          <p class="text-xl font-semibold text-green-400 mb-3">Total: <span id="totalCarrito">$0</span> COP</p>
+          <button onclick="finalizarCompra()" class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold">Finalizar compra</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 bg-gray-900 border-t border-gray-700 mt-16">
+    <p class="text-gray-400">© 2025 GamerTrade. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- SCRIPT DEL CARRITO -->
+  <script>
+    let carrito = [];
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      actualizarContador();
+      animarBoton();
+    }
+
+    function actualizarContador() {
+      document.getElementById("contadorCarrito").textContent = `(${carrito.length})`;
+    }
+
+    function mostrarCarrito() {
+      const modal = document.getElementById("modalCarrito");
+      const lista = document.getElementById("listaCarrito");
+      const total = document.getElementById("totalCarrito");
+      modal.classList.remove("hidden");
+
+      lista.innerHTML = "";
+      let suma = 0;
+      carrito.forEach((item, index) => {
+        lista.innerHTML += `
+          <div class="flex justify-between bg-gray-800 p-3 rounded-lg">
+            <span>${item.nombre}</span>
+            <span>$${item.precio.toLocaleString()}</span>
+            <button onclick="eliminarDelCarrito(${index})" class="text-red-400 hover:text-red-500 font-bold">X</button>
+          </div>
+        `;
+        suma += item.precio;
+      });
+      total.textContent = "$" + suma.toLocaleString();
+    }
+
+    function eliminarDelCarrito(index) {
+      carrito.splice(index, 1);
+      mostrarCarrito();
+      actualizarContador();
+    }
+
+    function finalizarCompra() {
+      if (carrito.length === 0) {
+        alert("Tu carrito está vacío 🛒");
+        return;
+      }
+      alert("✅ ¡Compra realizada con éxito!");
+      carrito = [];
+      actualizarContador();
+      document.getElementById("modalCarrito").classList.add("hidden");
+    }
+
+    function animarBoton() {
+      const btn = document.getElementById("verCarrito");
+      btn.classList.add("scale-110");
+      setTimeout(() => btn.classList.remove("scale-110"), 200);
+    }
+
+    document.getElementById("verCarrito").addEventListener("click", mostrarCarrito);
+    document.getElementById("cerrarCarrito").addEventListener("click", () => {
+      document.getElementById("modalCarrito").classList.add("hidden");
+    });
+  </script>
+</body>
+</html>
