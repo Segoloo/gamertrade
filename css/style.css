@@ -1,0 +1,28 @@
+.nav-link {
+  @apply hover:text-blue-400 transition-colors font-semibold;
+}
+
+.btn-primary {
+  @apply bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold transition-all duration-200 shadow-md hover:shadow-blue-700/50;
+}
+
+.btn-success {
+  @apply bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-semibold transition-all duration-200;
+}
+
+.btn-cart {
+  @apply bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg font-semibold transition-all duration-200;
+}
+
+.card {
+  @apply bg-gray-800 rounded-2xl p-4 shadow-lg hover:shadow-blue-500/20 transition;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
